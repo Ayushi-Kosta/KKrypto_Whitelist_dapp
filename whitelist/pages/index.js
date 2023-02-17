@@ -75,7 +75,7 @@ export default function Home() {
       );
       // call the whiteListedAddressCount from the contract
       const _numberOfWhitelisted =
-        await whitelistContract.whiteListedAddressCount();
+        await whitelistContract.numAddressesWhitelisted();
       setNumberOfWhitelisted(_numberOfWhitelisted);
     } catch (err) {
       console.error(err);
@@ -92,7 +92,7 @@ export default function Home() {
       );
 
       const address = await signer.getAddress();
-      const _joinedWhitelist = await whitelistContract.whiteListedAddress(
+      const _joinedWhitelist = await whitelistContract.whitelistedAddresses(
         address
       );
       setJoinedWhitelist(_joinedWhitelist);
